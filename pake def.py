@@ -2,7 +2,12 @@ import os
 import pandas as pd
 
 def home () :
-    print ("Selamat Datang di Aplikasi 'To Pofarm'!".center(50))
+    os.system("cls")
+    print ("""
+================================================       
+    Selamat Datang di Aplikasi 'To Pofarm'!
+================================================ 
+    """.center(50))
     input_awal = input ("Mulai belajar bertani? [y/t] : ")
     if input_awal == "y" :
         jenis_tanaman ()
@@ -28,14 +33,117 @@ def jenis_tanaman () : #inti alur kodingan
             
             if input_question_1 == "y" :
                 tomat_progress1 ()
-                input_question_2 = int(input ("\n1. Lanjut hari ke-2\n2. FAQ\n3. Hapus progress hari ini\n\nPilihanmu : "))
+                input_question_2 = int(input ("\n1. Lanjut hari ke-2-4\n2. FAQ\n3. Hapus progress hari ini\n\nPilihanmu : "))
                 
                 if input_question_2 == 1 :
                     tomat_day2 ()
                     input_question_3 = input ("\nApakah Anda sudah melakukannya sesuai instruksi? [y/t] : ")
                     
                     if input_question_3 == "y" :
-                        tomat_progress2 (); """ini hari ke-3"""
+                        tomat_progress2 ()
+                        input_question4 = int (input("\n1. Lanjut hari ke-5\n2. FAQ\n3. Hapus progress hari ini\n\nPilihanmu : "))
+                        if input_question4 == 1 :
+                            tomat_day5 ()
+                            input_question5 = input ("\nApakah Anda sudah melakukannya sesuai instruksi? [y/t] : ")
+                            if input_question5 == "y" :
+                                tomat_progress5 ()
+                                input_question6 = int(input("\n1. Lanjut hari ke-10\n2. FAQ\n3. Hapus progress hari ini\n\nPilihanmu : "))
+                                if input_question6 == 1 :
+                                    tomat_day10 ()
+                                    input_question7 = input ("\nApakah Anda sudah melakukannya sesuai instruksi? [y/t] : ")
+                                    if input_question7 == "y" :
+                                        tomat_progress10 () ; """sampe sini"""
+                                elif input_question6 == 2:
+                                    problem1 ()
+                                    input_problem = int(input ("Mana yang menjadi kesulitan Anda? : "))
+                                    
+                                    if input_problem == 1 :
+                                        print ("kosek rung tekan")
+                                        
+                                    elif input_problem == 2 :
+                                        print ('ini juga belom')
+                                        
+                                    elif input_problem == 3 : 
+                                        jenis_tanaman ()
+                                elif input_question6 == 3 :
+                                    hapus_progress (2)
+                                    input_hapus = input ("Ulangi progress? [y/t] : ")
+                                    if input_hapus == "y" :
+                                        tomat_day5 ()
+                                        input_question_3 = input ("\nApakah Anda sudah melakukannya sesuai instruksi? [y/t] : ")
+                                        if input_question_3 == "y" :
+                                            tomat_progress5 ()
+                                            input_question_4 = input ("lanjut? [y/t] : ")
+                                            if input_question_4 == "y" :
+                                                tomat_day10 ()
+
+                            elif input_question5 == 't' :
+                                problem1 ()
+                                input_problem = int(input ("Mana yang menjadi kesulitan Anda? : "))
+                                
+                                if input_problem == 1 :
+                                    print ("kosek rung tekan")
+                                    
+                                elif input_problem == 2 :
+                                    print ('ini juga belom')
+                                    
+                                elif input_problem == 3 : 
+                                    jenis_tanaman ()
+                        elif input_question4 == 2 :
+                            problem1 ()
+                            input_problem = int(input ("Mana yang menjadi kesulitan Anda? : "))
+                            
+                            if input_problem == 1 :
+                                print ("kosek rung tekan")
+                                
+                            elif input_problem == 2 :
+                                print ('ini juga belom')
+                                
+                            elif input_problem == 3 : 
+                                print ('nanti dulu ya teman')
+                        elif input_question4 == 3 :
+                            hapus_progress_tomat (1)
+                            input_hapus = input ("Ulangi progress? [y/t] : ")
+                            if input_hapus == "y" :
+                                tomat_day2 ()
+                                input_question_3 = input ("\nLanjut hari ke-5? [y/t] : ")
+                                if input_question_3 == "y" :
+                                    tomat_progress_hapus ()
+                                    input_question4 = int (input("\n1. Lanjut hari ke-5\n2. FAQ\n3. Hapus progress hari ini\n\nPilihanmu : "))
+                                    if input_question4 == 1 :
+                                        tomat_day5 ()
+                                        input_question5 = input ("\nApakah Anda sudah melakukannya sesuai instruksi? [y/t] : ")
+                                        if input_question5 == "y" :
+                                            tomat_progress5 ()
+                                            input_question6 = int(input("\n1. Lanjut hari ke-10\n2. FAQ\n3. Hapus progress hari ini\n\nPilihanmu : "))
+                                            if input_question6 == 1 :
+                                                tomat_day10 ()
+                                                input_question7 = input ("\nApakah Anda sudah melakukannya sesuai instruksi? [y/t] : ")
+                                                if input_question7 == "y" :
+                                                    tomat_progress10 () 
+                                            elif input_question6 == 2:
+                                                problem1 ()
+                                                input_problem = int(input ("Mana yang menjadi kesulitan Anda? : "))
+                                                
+                                                if input_problem == 1 :
+                                                    print ("kosek rung tekan")
+                                                    
+                                                elif input_problem == 2 :
+                                                    print ('ini juga belom')
+                                                    
+                                                elif input_problem == 3 : 
+                                                    jenis_tanaman ()
+                                            elif input_question6 == 3 :
+                                                hapus_progress (2)
+                                                input_hapus = input ("Ulangi progress? [y/t] : ")
+                                                if input_hapus == "y" :
+                                                    tomat_day5 ()
+                                                    input_question_3 = input ("\nApakah Anda sudah melakukannya sesuai instruksi? [y/t] : ")
+                                                    if input_question_3 == "y" :
+                                                        tomat_progress5 ()
+                                                        input_question_4 = input ("lanjut? [y/t] : ")
+                                                        if input_question_4 == "y" :
+                                                            tomat_day10 ()
                         
                     elif input_question_3 == 't' :
                         problem1 ()
@@ -73,24 +181,49 @@ def jenis_tanaman () : #inti alur kodingan
                         
                         if input_hapus1 == "y" :
                             tomat_progress1 ()
-                            tomat_day2 ()
-                            input_question_3 = input ("\nApakah Anda sudah melakukannya sesuai instruksi? [y/t] : ")
-                            
-                            if input_question_3 == "y" :
-                                tomat_progress2 ()
+                            input_question_2 = int(input ("\n1. Lanjut hari ke-2-4\n2. FAQ\n3. Hapus progress hari ini\n\nPilihanmu : "))
+
+                            if input_question_2 == 1 :
+                                tomat_day2 ()
+                                input_question_3 = input ("\nApakah Anda sudah melakukannya sesuai instruksi? [y/t] : ")
                                 
-                            elif input_question_3 == 't' :
-                                problem1 ()
-                                input_problem = int(input ("Mana yang menjadi kesulitan Anda? : "))
-                                
-                                if input_problem == 1 :
-                                    print ("kosek rung tekan")
-                                    
-                                elif input_problem == 2 :
-                                    print ('ini juga belom')
-                                    
-                                elif input_problem == 3 : 
-                                    jenis_tanaman ()
+                                if input_question_3 == "y" :
+                                    tomat_progress2 ()
+                                    input_question4 = int (input("\n1. Lanjut hari ke-5\n2. FAQ\n3. Hapus progress hari ini\n\nPilihanmu : "))
+                                    if input_question4 == 1 :
+                                        tomat_day5 ()
+                                        input_question5 = input ("\nApakah Anda sudah melakukannya sesuai instruksi? [y/t] : ")
+                                        if input_question5 == "y" :
+                                            tomat_progress5 ()
+                                            input_question6 = int(input("\n1. Lanjut hari ke-10\n2. FAQ\n3. Hapus progress hari ini\n\nPilihanmu : "))
+                                            if input_question6 == 1 :
+                                                tomat_day10 ()
+                                                input_question7 = input ("\nApakah Anda sudah melakukannya sesuai instruksi? [y/t] : ")
+                                                if input_question7 == "y" :
+                                                    tomat_progress10 () ; """sampe sini"""
+                                            elif input_question6 == 2:
+                                                problem1 ()
+                                                input_problem = int(input ("Mana yang menjadi kesulitan Anda? : "))
+                                                
+                                                if input_problem == 1 :
+                                                    print ("kosek rung tekan")
+                                                    
+                                                elif input_problem == 2 :
+                                                    print ('ini juga belom')
+                                                    
+                                                elif input_problem == 3 : 
+                                                    jenis_tanaman ()
+                                            elif input_question6 == 3 :
+                                                hapus_progress (2)
+                                                input_hapus = input ("Ulangi progress? [y/t] : ")
+                                                if input_hapus == "y" :
+                                                    tomat_day5 ()
+                                                    input_question_3 = input ("\nApakah Anda sudah melakukannya sesuai instruksi? [y/t] : ")
+                                                    if input_question_3 == "y" :
+                                                        tomat_progress5 ()
+                                                        input_question_4 = input ("lanjut? [y/t] : ")
+                                                        if input_question_4 == "y" :
+                                                            tomat_day10 ()
                                     
                     elif input_hapus1 == "t" :
                         tomat_day1 ()
@@ -200,9 +333,16 @@ def tomat_day1() :
         
     konten_tomat_1 = """
     Daily Tracker Day-1
-    1. Menggunakan tanah pilihan
-    2. Menyirami dengan sepenuh hati
-    3. Direkam time-lapse
+    
+    Yang perlu disiapkan adalah :
+    1.	Siapkan bibit tomat
+    2.	Air secukupnya
+    3.	Polybag yang sudah diisi dengan media tanam tanah
+    4.	Pupuk kandang
+    
+    Langkah-langkah :
+    Rendam bibit (mempercepat pembelahan bijinya) di dalam 
+    gelas lalu berikan air secukupnya dan tunggu 5 – 6 jam.
     """
     print (konten_tomat_1)    
 
@@ -229,12 +369,30 @@ def tomat_progress1 () :
             
 def tomat_day2 () :
     os.system ("cls")
-    print ("\n1. Disiram doang ya 3x sehari\n2. Disayang juga")
+    print ("""
+    Day 2 - 4:
+    Bersiap untuk menanam
+    
+    Hal yang perlu Anda lakukan :
+    1.	Siapkan polybag yang berisi media tanah 
+    2.	Letakkan atau taburkan biji cabe yang telah di rendam 
+        ke dalam polybag yang sudah berisi tanah
+    3.	Kasih jarak antar bibit agar tidak menumpuk dan tidak 
+        saling mendorong pada saat tumbuh.
+    4.	Setelah bibit sudah di letakkan di tanah, taburkan pupuk 
+        kandang secukupnya di atas biji yang sudah di tanam.
+    5.	Berikutnya yang paling penting adalah siram bibit tersebut 
+        dengan air secukupnya.
+    6.	Setelah disiram sampai basah lalu polybag tersebut di tutup.
+        Misal menggunakan kain selama 2 hari 2 malam (tempat gelap 
+        bisa mempercepat pembelahan bijinya.) 
+
+    """)
     
 def tomat_progress2 () :
     os.system ("cls") 
     file_tomat = open ("./project akhir huhu/tomat.csv", 'a')
-    konten_tomat_csv1 = "\n2, terlaksana"
+    konten_tomat_csv1 = "\n2-4, terlaksana"
     file_tomat.write (konten_tomat_csv1)
     file_tomat.close () 
         
@@ -242,7 +400,64 @@ def tomat_progress2 () :
     df = pd.read_csv (file_csv_tomat)
     print ("\n\nProgress Anda sejauh ini")
     print (df)
+    
+def tomat_progress_hapus () :
+    os.system ("cls")
+    file_csv_tomat = "./project akhir huhu/tomat.csv"
+    df = pd.read_csv (file_csv_tomat)
+    print ("\n\nProgress Anda sejauh ini")
+    print (df)
+    
+def tomat_day5 () :
+    os.system ("cls")
+    print ("""
+    Day 5-9
 
+    Setelah di tutup selama 2 hari 2 malam, 
+    di hari ke-5, biji sudah pecah. Dan di hari ke lima
+    akan muncul batang tipis serta daun.
+
+    """)
+    
+def tomat_progress5 () :
+    os.system ("cls") 
+    file_tomat = open ("./project akhir huhu/tomat.csv", 'a')
+    konten_tomat_csv1 = "\n5-9, terlaksana"
+    file_tomat.write (konten_tomat_csv1)
+    file_tomat.close () 
+
+    file_csv_tomat = "./project akhir huhu/tomat.csv"
+    df = pd.read_csv (file_csv_tomat)
+    print ("\n\nProgress Anda sejauh ini")
+    print (df)
+    
+def tomat_day10 () :
+    os.system ("cls")
+    print ("""
+    Day-10
+    
+    Pada hari ke sepuluh, bibit sudah mulai pertumbuhan di tandai dengan muncul 4-5 daun.
+    
+    Lakukan :
+    1.	Pisahkan dan sendirikan bibit-bibit ke dalam polybag baru agar pertumbuhan nya semakin cepat.
+    2.	Setelah di tancapkan ke polybag yang baru, tusuk-tusuk tanah di sekeliling tanaman agar pada saat disiram, air-air nya akan meresap kedalam tanah.
+    3.	Setelah semua sudah dipindahkan, siram tanaman dengan air secukupnya.
+    4.	Apabila musim kemarau, siram tanaman dua kali sehari. Jika musim hujan jangan sering menyiram tanaman. Lakukan setiap hari.
+    
+    """)
+    
+def tomat_progress10 () :
+    os.system ("cls") 
+    file_tomat = open ("./project akhir huhu/tomat.csv", 'a')
+    konten_tomat_csv1 = "\n10, terlaksana"
+    file_tomat.write (konten_tomat_csv1)
+    file_tomat.close () 
+    
+    file_csv_tomat = "./project akhir huhu/tomat.csv"
+    df = pd.read_csv (file_csv_tomat)
+    print ("\n\nProgress Anda sejauh ini")
+    print (df)
+    
 def cabai () :
     print ('Anda memilih CABAI!')
     print ('\n====== Basic Knowledges! ======'.center(50))
